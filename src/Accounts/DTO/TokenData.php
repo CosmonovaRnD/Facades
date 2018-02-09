@@ -1,13 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace CosmonovaRnD\Facades\Accounts;
+namespace CosmonovaRnD\Facades\Accounts\DTO;
 
 /**
  * Class TokenData
  *
  * @author  Aleksandr Besedin <bs@cosmonova.net>
  * @package CosmonovaRnD\Facades\Accounts
+ * @since   1.0.0
  * Cosmonova | Research & Development
  */
 final class TokenData
@@ -40,7 +41,7 @@ final class TokenData
     /**
      * @param string $json
      *
-     * @return \CosmonovaRnD\Facades\Accounts\TokenData
+     * @return \CosmonovaRnD\Facades\Accounts\DTO\TokenData
      * @throws \Exception
      */
     public static function createFromJson(string $json): self

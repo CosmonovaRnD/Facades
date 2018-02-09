@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace CosmonovaRnD\Adapters\Tests;
 
 use CosmonovaRnD\Facades\Accounts\AccountsFacade;
-use CosmonovaRnD\Facades\Accounts\TokenData;
+use CosmonovaRnD\Facades\Accounts\DTO\TokenData;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
@@ -12,13 +12,13 @@ use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class AccountsFacadesTest
+ * Class AccountsFacadeTest
  *
  * @author  Aleksandr Besedin <bs@cosmonova.net>
  * @package CosmonovaRnD\Adapters\Tests
  * Cosmonova | Research & Development
  */
-class AccountsFacadesTest extends TestCase
+class AccountsFacadeTest extends TestCase
 {
     /**
      * @throws \Exception
@@ -62,18 +62,18 @@ class AccountsFacadesTest extends TestCase
     {
         $inputTokenData = $this->getTokenStubs();
 
-        $client  = $this->createClient($inputTokenData);
-        $adapter = new AccountsFacade($client, 'http://localhost');
-        /** @var TokenData $outputTokenData */
-        $outputTokenData = $adapter->getUserAccessToken('app_id', 'app_secret', 'test_username', 'test_password');
-        $this->assertTokenData($inputTokenData, $outputTokenData);
-        $failedResponse = $adapter->getAppAccessToken('app_id', 'app_secret');
+        $client = $this->createClient($inputTokenData);
+        $facade = new AccountsFacade($client, 'http://localhost');
+        /** @var \CosmonovaRnD\Facades\Accounts\DTO\TokenData $outputTokenData */
+        $outputTokenData = $facade->refreshTokenBy('app_id', 'app_secret', 'refresh_token');
+        $this->assertInstanceOf(TokenData::class, $outputTokenData);
+        $failedResponse = $facade->refreshTokenBy('app_id', 'app_secret', 'refresh_token');
         $this->assertEmpty($failedResponse);
     }
 
     /**
-     * @param array                                         $expect
-     * @param \CosmonovaRnD\Facades\Accounts\TokenData|null $actual
+     * @param array                                             $expect
+     * @param \CosmonovaRnD\Facades\Accounts\DTO\TokenData|null $actual
      *
      * @throws \Exception
      */
