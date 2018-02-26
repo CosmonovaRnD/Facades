@@ -20,15 +20,16 @@ class House extends Building
 
     /**
      * House constructor.
+     *
      * @param string $id
      * @param int|null $floors
      * @param int $type
      * @param string $name
      * @param null|string $googlePlaceId
-     * @param array|null $photos
+     * @param Attachment[]|[] $photos
      * @param Housing|null $housing
-     * @param array|null $agreements
-     * @param array|null $competitors
+     * @param Agreement[]|[] $agreements
+     * @param Competitor[]|[] $competitors
      * @param string $createdBy
      * @param \DateTimeImmutable $createdAt
      * @param string $editedBy
@@ -69,6 +70,7 @@ class House extends Building
 
     /**
      * @param array $data
+     *
      * @return House
      */
     public static function createFromResponse(array $data): self

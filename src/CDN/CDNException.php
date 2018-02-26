@@ -8,7 +8,7 @@ namespace CosmonovaRnD\Facades\CDN;
  *
  * @author Serhii Kondratiuk <serhii.kondratiuk@cosmonova.net>
  * @package CosmonovaRnD\Facades\Buildings
- * @since   1.4.0
+ * @since   1.3.0
  * Cosmonova | Research & Development
  */
 class CDNException extends \Exception

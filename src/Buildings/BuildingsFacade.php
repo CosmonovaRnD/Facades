@@ -5,6 +5,7 @@ namespace CosmonovaRnD\Facades\Buildings;
 
 use CosmonovaRnD\Facades\Buildings\DTO\Agreement;
 use CosmonovaRnD\Facades\Buildings\DTO\Attachment;
+use CosmonovaRnD\Facades\Buildings\DTO\Building;
 use CosmonovaRnD\Facades\Buildings\DTO\Competitor;
 use CosmonovaRnD\Facades\Buildings\DTO\Complex;
 use CosmonovaRnD\Facades\Buildings\DTO\House;
@@ -51,8 +52,10 @@ final class BuildingsFacade
 
     /**
      * @param string $accessToken
-     * @return array
+     *
+     * @return Building[]|[]
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function getBuildings(
         string $accessToken
@@ -99,8 +102,10 @@ final class BuildingsFacade
      * @param int|null $page
      * @param int|null $limit
      * @param array|null $sort
-     * @return array
+     *
+     * @return Competitor[]|[]
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function getCompetitors(
         string $accessToken,
@@ -156,8 +161,10 @@ final class BuildingsFacade
     /**
      * @param string $accessToken
      * @param int $id
+     *
      * @return Competitor
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function getCompetitor(string $accessToken, int $id): Competitor
     {
@@ -183,8 +190,10 @@ final class BuildingsFacade
     /**
      * @param string $accessToken
      * @param string $name
+     *
      * @return Competitor
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function newCompetitor(string $accessToken, string $name): Competitor
     {
@@ -214,8 +223,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param int $id
      * @param null|string $name
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function updateCompetitor(string $accessToken, int $id, ?string $name = null): bool
     {
@@ -248,8 +259,10 @@ final class BuildingsFacade
     /**
      * @param string $accessToken
      * @param int $id
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function deleteCompetitor(string $accessToken, int $id): bool
     {
@@ -278,8 +291,10 @@ final class BuildingsFacade
      * @param int|null $page
      * @param int|null $limit
      * @param array|null $sort
-     * @return array
+     *
+     * @return Housing[]|[]
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function getHousings(
         string $accessToken,
@@ -335,8 +350,10 @@ final class BuildingsFacade
     /**
      * @param string $accessToken
      * @param int $id
+     *
      * @return Housing
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function getHousing(string $accessToken, int $id): Housing
     {
@@ -363,8 +380,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $name
      * @param string $address
+     *
      * @return Housing
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function newHousing(string $accessToken, string $name, string $address): Housing
     {
@@ -396,8 +415,10 @@ final class BuildingsFacade
      * @param int $id
      * @param null|string $name
      * @param null|string $address
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function updateHousing(string $accessToken, int $id, ?string $name = null, ?string $address = null): bool
     {
@@ -434,8 +455,10 @@ final class BuildingsFacade
     /**
      * @param string $accessToken
      * @param int $id
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function deleteHousing(string $accessToken, int $id): bool
     {
@@ -464,8 +487,10 @@ final class BuildingsFacade
      * @param int|null $page
      * @param int|null $limit
      * @param array|null $sort
-     * @return array
+     *
+     * @return House[]|[]
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function getHouses(
         string $accessToken,
@@ -521,8 +546,10 @@ final class BuildingsFacade
     /**
      * @param string $accessToken
      * @param string $id
+     *
      * @return House
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function getHouse(string $accessToken, string $id): House
     {
@@ -551,8 +578,10 @@ final class BuildingsFacade
      * @param null|int $floors
      * @param null|string $googlePlaceId
      * @param null|string $objectType
+     *
      * @return House
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function newHouse(
         string $accessToken,
@@ -593,8 +622,10 @@ final class BuildingsFacade
      * @param null|int $floors
      * @param null|string $googlePlaceId
      * @param null|string $objectType
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function updateHouse(
         string $accessToken,
@@ -645,8 +676,10 @@ final class BuildingsFacade
     /**
      * @param string $accessToken
      * @param string $id
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function deleteHouse(string $accessToken, string $id): bool
     {
@@ -673,8 +706,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $houseId
      * @param int $competitorId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function addCompetitorToHouse(string $accessToken, string $houseId, int $competitorId): bool
     {
@@ -690,8 +725,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $houseId
      * @param int $competitorId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function removeCompetitorFromHouse(string $accessToken, string $houseId, int $competitorId): bool
     {
@@ -710,8 +747,10 @@ final class BuildingsFacade
      * @param \DateTimeImmutable $expires
      * @param \DateTimeImmutable $signDate
      * @param array|null $attachments
+     *
      * @return Agreement
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function newAgreementInHouse(
         string $accessToken,
@@ -743,8 +782,10 @@ final class BuildingsFacade
      * @param \DateTimeImmutable|null $expires
      * @param bool|null $autoExtend
      * @param array|null $attachments
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function updateAgreementInHouse(
         string $accessToken,
@@ -785,8 +826,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $houseId
      * @param int $agreementId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function deleteAgreementInHouse(string $accessToken, string $houseId, int $agreementId): bool
     {
@@ -802,8 +845,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $houseId
      * @param int $housingId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function addHousingToHouse(string $accessToken, string $houseId, int $housingId): bool
     {
@@ -819,8 +864,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $houseId
      * @param int $housingId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function removeHousingFromHouse(string $accessToken, string $houseId, int $housingId): bool
     {
@@ -836,8 +883,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $id
      * @param array $attachments
-     * @return array
+     *
+     * @return Attachment[]|[]
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function newAttachmentInHouse(string $accessToken, string $id, array $attachments): array
     {
@@ -853,8 +902,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $houseId
      * @param int $attachmentId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function deleteAttachmentInHouse(string $accessToken, string $houseId, int $attachmentId): bool
     {
@@ -872,8 +923,10 @@ final class BuildingsFacade
      * @param int|null $page
      * @param int|null $limit
      * @param array|null $sort
-     * @return array
+     *
+     * @return MultiApartment[]|[]
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function getMultiApartments(
         string $accessToken,
@@ -929,8 +982,10 @@ final class BuildingsFacade
     /**
      * @param string $accessToken
      * @param string $id
+     *
      * @return MultiApartment
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function getMultiApartment(string $accessToken, string $id): MultiApartment
     {
@@ -960,8 +1015,10 @@ final class BuildingsFacade
      * @param int|null $rooms
      * @param null|string $googlePlaceId
      * @param null|string $objectType
+     *
      * @return MultiApartment
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function newMultiApartment(
         string $accessToken,
@@ -1005,8 +1062,10 @@ final class BuildingsFacade
      * @param int|null $rooms
      * @param null|string $googlePlaceId
      * @param null|string $objectType
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function updateMultiApartment(
         string $accessToken,
@@ -1062,8 +1121,10 @@ final class BuildingsFacade
     /**
      * @param string $accessToken
      * @param string $id
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function deleteMultiApartment(string $accessToken, string $id): bool
     {
@@ -1090,8 +1151,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $multiApartmentId
      * @param int $competitorId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function addCompetitorToMultiApartment(string $accessToken, string $multiApartmentId, int $competitorId): bool
     {
@@ -1107,8 +1170,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $multiApartmentId
      * @param int $competitorId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function removeCompetitorFromMultiApartment(string $accessToken, string $multiApartmentId, int $competitorId): bool
     {
@@ -1127,8 +1192,10 @@ final class BuildingsFacade
      * @param \DateTimeImmutable $expires
      * @param \DateTimeImmutable $signDate
      * @param array|null $attachments
+     *
      * @return Agreement
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function newAgreementInMultiApartment(
         string $accessToken,
@@ -1160,8 +1227,10 @@ final class BuildingsFacade
      * @param \DateTimeImmutable|null $expires
      * @param bool|null $autoExtend
      * @param array|null $attachments
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function updateAgreementInMultiApartment(
         string $accessToken,
@@ -1202,8 +1271,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $multiApartmentId
      * @param int $agreementId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function deleteAgreementInMultiApartment(string $accessToken, string $multiApartmentId, int $agreementId): bool
     {
@@ -1219,8 +1290,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $multiApartmentId
      * @param int $housingId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function addHousingToMultiApartment(string $accessToken, string $multiApartmentId, int $housingId): bool
     {
@@ -1236,8 +1309,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $multiApartmentId
      * @param int $housingId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function removeHousingFromMultiApartment(string $accessToken, string $multiApartmentId, int $housingId): bool
     {
@@ -1253,8 +1328,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $id
      * @param array $attachments
-     * @return array
+     *
+     * @return Attachment[]|[]
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function newAttachmentInMultiApartment(string $accessToken, string $id, array $attachments): array
     {
@@ -1270,8 +1347,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $multiApartmentId
      * @param int $attachmentId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function deleteAttachmentInMultiApartment(string $accessToken, string $multiApartmentId, int $attachmentId): bool
     {
@@ -1292,8 +1371,10 @@ final class BuildingsFacade
      * @param int|null $rooms
      * @param null|string $googlePlaceId
      * @param null|string $objectType
+     *
      * @return MultiApartment
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function newSectionInMultiApartment(
         string $accessToken,
@@ -1342,8 +1423,10 @@ final class BuildingsFacade
      * @param null|string $sectionNumber
      * @param int|null $rooms
      * @param null|string $objectType
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function updateSectionInMultiApartment(
         string $accessToken,
@@ -1406,8 +1489,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $multiApartmentId
      * @param string $sectionId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function deleteSectionInMultiApartment(string $accessToken, string $multiApartmentId, string $sectionId): bool
     {
@@ -1435,8 +1520,10 @@ final class BuildingsFacade
      * @param string $multiApartmentId
      * @param string $sectionId
      * @param array $attachments
-     * @return array
+     *
+     * @return Attachment[]|[]
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function newAttachmentInSectionInMultiApartment(
         string $accessToken,
@@ -1457,8 +1544,10 @@ final class BuildingsFacade
      * @param string $multiApartmentId
      * @param string $sectionId
      * @param int $attachmentId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function deleteAttachmentInSectionInMultiApartment(
         string $accessToken,
@@ -1480,8 +1569,10 @@ final class BuildingsFacade
      * @param int|null $page
      * @param int|null $limit
      * @param array|null $sort
-     * @return array
+     *
+     * @return Complex[]|[]
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function getComplexes(
         string $accessToken,
@@ -1537,8 +1628,10 @@ final class BuildingsFacade
     /**
      * @param string $accessToken
      * @param string $id
+     *
      * @return Complex
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function getComplex(string $accessToken, string $id): Complex
     {
@@ -1566,8 +1659,10 @@ final class BuildingsFacade
      * @param string $name
      * @param null|string $googlePlaceId
      * @param null|string $objectType
+     *
      * @return Complex
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function newComplex(
         string $accessToken,
@@ -1605,8 +1700,10 @@ final class BuildingsFacade
      * @param null|string $name
      * @param null|string $googlePlaceId
      * @param null|string $objectType
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function updateComplex(
         string $accessToken,
@@ -1653,8 +1750,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $id
      * @param bool $withMultiApartment
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function deleteComplex(string $accessToken, string $id, bool $withMultiApartment): bool
     {
@@ -1684,8 +1783,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $complexId
      * @param int $competitorId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function addCompetitorToComplex(string $accessToken, string $complexId, int $competitorId): bool
     {
@@ -1701,8 +1802,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $complexId
      * @param int $competitorId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function removeCompetitorFromComplex(string $accessToken, string $complexId, int $competitorId): bool
     {
@@ -1721,8 +1824,10 @@ final class BuildingsFacade
      * @param \DateTimeImmutable $expires
      * @param \DateTimeImmutable $signDate
      * @param array|null $attachments
+     *
      * @return Agreement
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function newAgreementInComplex(
         string $accessToken,
@@ -1754,8 +1859,10 @@ final class BuildingsFacade
      * @param \DateTimeImmutable|null $expires
      * @param \DateTimeImmutable|null $signDate
      * @param array|null $attachments
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function updateAgreementInComplex(
         string $accessToken,
@@ -1796,8 +1903,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $complexId
      * @param int $agreementId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function deleteAgreementInComplex(string $accessToken, string $complexId, int $agreementId): bool
     {
@@ -1813,8 +1922,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $complexId
      * @param int $housingId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function addHousingToComplex(string $accessToken, string $complexId, int $housingId): bool
     {
@@ -1830,8 +1941,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $complexId
      * @param int $housingId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function removeHousingFromComplex(string $accessToken, string $complexId, int $housingId): bool
     {
@@ -1847,8 +1960,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $id
      * @param array $attachments
-     * @return array
+     *
+     * @return Attachment[]|[]
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function newAttachmentInComplex(string $accessToken, string $id, array $attachments): array
     {
@@ -1864,8 +1979,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $complexId
      * @param int $attachmentId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function deleteAttachmentInComplex(string $accessToken, string $complexId, int $attachmentId): bool
     {
@@ -1881,8 +1998,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $complexId
      * @param string $multiApartmentId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function addMultiApartmentToComplex(string $accessToken, string $complexId, string $multiApartmentId): bool
     {
@@ -1909,8 +2028,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $complexId
      * @param string $multiApartmentId
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function removeMultiApartmentFromComplex(string $accessToken, string $complexId, string $multiApartmentId): bool
     {
@@ -1936,8 +2057,10 @@ final class BuildingsFacade
     /**
      * @param string $accessToken
      * @param int $id
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     public function deleteAttachment(string $accessToken, int $id): bool
     {
@@ -2001,7 +2124,9 @@ final class BuildingsFacade
 
     /**
      * @param array $house
+     *
      * @return House
+     * @since   1.3.0
      */
     private function processHouse(array $house): House
     {
@@ -2044,7 +2169,9 @@ final class BuildingsFacade
 
     /**
      * @param array $complex
+     *
      * @return Complex
+     * @since   1.3.0
      */
     private function processComplex(array $complex): Complex
     {
@@ -2097,7 +2224,9 @@ final class BuildingsFacade
 
     /**
      * @param array $section
+     *
      * @return Section
+     * @since   1.3.0
      */
     private function processSection(array $section): Section
     {
@@ -2140,7 +2269,9 @@ final class BuildingsFacade
 
     /**
      * @param array $multiApartment
+     *
      * @return MultiApartment
+     * @since   1.3.0
      */
     private function processMultiApartment(array $multiApartment): MultiApartment
     {
@@ -2193,7 +2324,9 @@ final class BuildingsFacade
 
     /**
      * @param array $agreement
+     *
      * @return Agreement
+     * @since   1.3.0
      */
     private function processAgreement(array $agreement): Agreement
     {
@@ -2212,7 +2345,9 @@ final class BuildingsFacade
 
     /**
      * @param array $attachment
+     *
      * @return Attachment
+     * @since   1.3.0
      */
     private function processAttachment(array $attachment): Attachment
     {
@@ -2221,7 +2356,9 @@ final class BuildingsFacade
 
     /**
      * @param array $housing
+     *
      * @return Housing
+     * @since   1.3.0
      */
     private function processHousing(array $housing): Housing
     {
@@ -2251,8 +2388,10 @@ final class BuildingsFacade
     /**
      * @param string $accessToken
      * @param string $url
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     private function addCompetitorToBuilding(string $accessToken, string $url): bool
     {
@@ -2277,8 +2416,10 @@ final class BuildingsFacade
     /**
      * @param string $accessToken
      * @param string $url
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     private function removeCompetitorFromBuilding(string $accessToken, string $url): bool
     {
@@ -2304,8 +2445,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $url
      * @param array $jsonData
+     *
      * @return Agreement
      * @throws BuildingsException
+     * @since   1.3.0
      */
     private function newAgreementInBuilding(string $accessToken, string $url, array $jsonData): Agreement
     {
@@ -2332,8 +2475,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $url
      * @param array $jsonData
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     private function updateAgreementInBuilding(string $accessToken, string $url, array $jsonData): bool
     {
@@ -2359,8 +2504,10 @@ final class BuildingsFacade
     /**
      * @param string $accessToken
      * @param string $url
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     private function deleteAgreementInBuilding(string $accessToken, string $url): bool
     {
@@ -2385,8 +2532,10 @@ final class BuildingsFacade
     /**
      * @param string $accessToken
      * @param string $url
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     private function addHousingToBuilding(string $accessToken, string $url): bool
     {
@@ -2411,8 +2560,10 @@ final class BuildingsFacade
     /**
      * @param string $accessToken
      * @param string $url
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     private function removeHousingFromBuilding(string $accessToken, string $url): bool
     {
@@ -2438,8 +2589,10 @@ final class BuildingsFacade
      * @param string $accessToken
      * @param string $url
      * @param array $attachments
-     * @return array
+     *
+     * @return Attachment[]|[]
      * @throws BuildingsException
+     * @since   1.3.0
      */
     private function newAttachmentInBuilding(string $accessToken, string $url, array $attachments): array
     {
@@ -2471,8 +2624,10 @@ final class BuildingsFacade
     /**
      * @param string $accessToken
      * @param string $url
+     *
      * @return bool
      * @throws BuildingsException
+     * @since   1.3.0
      */
     private function deleteAttachmentInBuilding(string $accessToken, string $url): bool
     {

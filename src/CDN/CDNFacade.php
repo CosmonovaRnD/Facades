@@ -13,7 +13,7 @@ use Psr\Http\Message\ResponseInterface;
  *
  * @author Serhii Kondratiuk <serhii.kondratiuk@cosmonova.net>
  * @package CosmonovaRnD\Facades\CDN
- * @since   1.4.0
+ * @since   1.3.0
  * Cosmonova | Research & Development
  */
 final class CDNFacade
@@ -46,8 +46,10 @@ final class CDNFacade
      * @param string $accessToken
      * @param array $file
      * @param int $directoryType
+     *
      * @return FileUpload
      * @throws CDNException
+     * @since   1.3.0
      */
     public function uploadFile(string $accessToken, array $file, int $directoryType): FileUpload
     {
@@ -84,8 +86,10 @@ final class CDNFacade
      * @param string $accessToken
      * @param array $files
      * @param int $directoryType
-     * @return array
+     *
+     * @return FileUpload[]|[]
      * @throws CDNException
+     * @since   1.3.0
      */
     public function uploadMultipleFiles(string $accessToken, array $files, int $directoryType): array
     {
@@ -132,8 +136,10 @@ final class CDNFacade
      * @param string $accessToken
      * @param array $parameters
      * @param string $path
+     *
      * @return string
      * @throws CDNException
+     * @since   1.3.0
      */
     public function getImageThumbnail(string $accessToken, array $parameters, string $path): string
     {
@@ -162,8 +168,10 @@ final class CDNFacade
      * @param int|null $page
      * @param int|null $limit
      * @param array|null $sort
-     * @return array
+     *
+     * @return FileData[]|[]
      * @throws CDNException
+     * @since   1.3.0
      */
     public function searchFiles(
         string $accessToken,
@@ -220,8 +228,10 @@ final class CDNFacade
     /**
      * @param string $accessToken
      * @param string $id
+     *
      * @return bool
      * @throws CDNException
+     * @since   1.3.0
      */
     public function deleteFile(string $accessToken, string $id): bool
     {

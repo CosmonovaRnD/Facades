@@ -40,6 +40,7 @@ class Attachment
 
     /**
      * Attachment constructor.
+     *
      * @param int $id
      * @param string $link
      * @param string $createdBy
@@ -65,6 +66,7 @@ class Attachment
 
     /**
      * @param array $data
+     *
      * @return Attachment
      */
     public static function createFromResponse(array $data): self

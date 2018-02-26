@@ -26,7 +26,7 @@ class Housing
      */
     public $address;
     /**
-     * @var array|null
+     * @var Building[]|[]
      */
     public $buildings;
     /**
@@ -48,10 +48,11 @@ class Housing
 
     /**
      * Housing constructor.
+     *
      * @param int $id
      * @param string $name
      * @param string $address
-     * @param array|null $buildings
+     * @param Building[]|[] $buildings
      * @param string $createdBy
      * @param \DateTimeImmutable $createdAt
      * @param string $editedBy
@@ -79,6 +80,7 @@ class Housing
 
     /**
      * @param array $data
+     *
      * @return Housing
      */
     public static function createFromResponse(array $data): self
