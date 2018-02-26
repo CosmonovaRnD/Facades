@@ -22,23 +22,24 @@ class MultiApartment extends Building
      */
     public $rooms;
     /**
-     * @var array|null
+     * @var Section[]|[]
      */
     public $sections;
 
     /**
      * MultiApartment constructor.
+     *
      * @param string $id
      * @param int|null $floors
      * @param int|null $rooms
      * @param int $type
-     * @param array|null $sections
+     * @param Section[]|[] $sections
      * @param string $name
      * @param null|string $googlePlaceId
-     * @param array|null $photos
+     * @param Attachment[]|[] $photos
      * @param Housing|null $housing
-     * @param array|null $agreements
-     * @param array|null $competitors
+     * @param Agreement[]|[] $agreements
+     * @param Competitor[]|[] $competitors
      * @param string $createdBy
      * @param \DateTimeImmutable $createdAt
      * @param string $editedBy
@@ -83,6 +84,7 @@ class MultiApartment extends Building
 
     /**
      * @param array $data
+     *
      * @return MultiApartment
      */
     public static function createFromResponse(array $data): self

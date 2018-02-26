@@ -18,7 +18,7 @@ class Agreement
      */
     public $id;
     /**
-     * @var array|null
+     * @var Attachment[]|[]
      */
     public $files;
     /**
@@ -52,8 +52,9 @@ class Agreement
 
     /**
      * Agreement constructor.
+     *
      * @param int $id
-     * @param array|null $files
+     * @param Attachment[]|[] $files
      * @param \DateTimeImmutable $signDate
      * @param \DateTimeImmutable $expires
      * @param bool $autoExtend
@@ -86,6 +87,7 @@ class Agreement
 
     /**
      * @param array $data
+     *
      * @return Agreement
      */
     public static function createFromResponse(array $data): self

@@ -40,6 +40,7 @@ class Competitor
 
     /**
      * Competitors constructor.
+     *
      * @param int $id
      * @param string $name
      * @param string $createdBy
@@ -65,6 +66,7 @@ class Competitor
 
     /**
      * @param array $data
+     *
      * @return Competitor
      */
     public static function createFromResponse(array $data): self

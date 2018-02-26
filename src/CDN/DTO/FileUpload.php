@@ -8,7 +8,7 @@ namespace CosmonovaRnD\Facades\CDN\DTO;
  *
  * @author Serhii Kondratiuk <serhii.kondratiuk@cosmonova.net>
  * @package CosmonovaRnD\Facades\CDN\DTO
- * @since   1.4.0
+ * @since   1.3.0
  * Cosmonova | Research & Development
  */
 class FileUpload
@@ -32,6 +32,7 @@ class FileUpload
 
     /**
      * FileUpload constructor.
+     *
      * @param string $uuid
      * @param string $href
      * @param string $type
@@ -51,6 +52,7 @@ class FileUpload
 
     /**
      * @param array $data
+     *
      * @return FileUpload
      */
     public static function createFromResponse(array $data): self

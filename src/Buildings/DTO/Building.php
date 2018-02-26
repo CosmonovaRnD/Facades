@@ -30,7 +30,7 @@ abstract class Building
      */
     public $googlePlaceId;
     /**
-     * @var array|null
+     * @var Attachment[]|[]
      */
     public $photos;
     /**
@@ -38,11 +38,11 @@ abstract class Building
      */
     public $housing;
     /**
-     * @var array|null
+     * @var Agreement[]|[]
      */
     public $agreements;
     /**
-     * @var array|null
+     * @var Competitor[]|[]
      */
     public $competitors;
     /**

@@ -19,7 +19,6 @@ use PHPUnit\Framework\TestCase;
  *
  * @author Serhii Kondratiuk <serhii.kondratiuk@cosmonova.net>
  * @package CosmonovaRnD\Adapters\Tests\Notifications
- * @since   1.2.0
  * Cosmonova | Research & Development
  */
 class NotificationsFacadeTest extends TestCase

@@ -14,21 +14,22 @@ namespace CosmonovaRnD\Facades\Buildings\DTO;
 class Complex extends Building
 {
     /**
-     * @var array|null
+     * @var MultiApartment[]|[]
      */
     public $multiApartments;
 
     /**
      * Complex constructor.
+     *
      * @param string $id
-     * @param array|null $multiApartments
+     * @param MultiApartment[]|[] $multiApartments
      * @param int $type
      * @param string $name
      * @param null|string $googlePlaceId
-     * @param array|null $photos
+     * @param Attachment[]|[] $photos
      * @param Housing|null $housing
-     * @param array|null $agreements
-     * @param array|null $competitors
+     * @param Agreement[]|[] $agreements
+     * @param Competitor[]|[] $competitors
      * @param string $createdBy
      * @param \DateTimeImmutable $createdAt
      * @param string $editedBy
@@ -69,6 +70,7 @@ class Complex extends Building
 
     /**
      * @param array $data
+     *
      * @return Complex
      */
     public static function createFromResponse(array $data): self
