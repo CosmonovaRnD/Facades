@@ -2264,10 +2264,10 @@ class BuildingsFacadeTest extends TestCase
             $data['multiApartmentId'],
             $data['sectionId'],
             $data['name'],
-            $data['google_place_id'],
-            $data['floors'],
             $data['section_number'],
+            $data['floors'],
             $data['rooms'],
+            $data['google_place_id'],
             $data['object_type']
         );
         $this->assertTrue($updateResult);
