@@ -54,7 +54,7 @@ final class TokenData
 
         $accessToken  = $data['access_token'] ?? '';
         $tokenType    = $data['token_type'] ?? '';
-        $expiresIn    = $data['expires_in'] ?? 0;
+        $expiresIn    = $data['expires'] ?? 0;
         $refreshToken = $data['refresh_token'] ?? null;
 
         return new self($accessToken, $tokenType, $expiresIn, $refreshToken);
