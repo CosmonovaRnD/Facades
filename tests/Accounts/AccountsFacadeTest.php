@@ -72,6 +72,23 @@ class AccountsFacadeTest extends TestCase
     }
 
     /**
+     * @throws \Exception
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function testAuthorizationCode(): void
+    {
+        $inputTokenData = $this->getTokenStubs();
+
+        $client = $this->createClient($inputTokenData);
+        $facade = new AccountsFacade($client, 'http://localhost');
+        /** @var \CosmonovaRnD\Facades\Accounts\DTO\TokenData $outputTokenData */
+        $outputTokenData = $facade->authorizationCode('app_id', 'app_secret', 'code', 'redirect_uri');
+        $this->assertInstanceOf(TokenData::class, $outputTokenData);
+        $failedResponse = $facade->authorizationCode('app_id', 'app_secret', 'code', 'redirect_uri');
+        $this->assertEmpty($failedResponse);
+    }
+
+    /**
      * @param array                                             $expect
      * @param \CosmonovaRnD\Facades\Accounts\DTO\TokenData|null $actual
      *

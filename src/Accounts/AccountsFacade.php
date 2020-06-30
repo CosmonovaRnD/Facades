@@ -5,6 +5,7 @@ namespace CosmonovaRnD\Facades\Accounts;
 
 use CosmonovaRnD\Facades\Accounts\DTO\TokenData;
 use GuzzleHttp\ClientInterface;
+use Throwable;
 
 /**
  * Class AccountsFacade
@@ -121,6 +122,42 @@ final class AccountsFacade
                 return TokenData::createFromJson($response->getBody()->getContents());
             }
         } catch (\Throwable $throwable) {
+            // DoNothing
+        }
+
+        return null;
+    }
+
+    /**
+     * @param string $appId
+     * @param string $appSecret
+     * @param string $code
+     * @param string $redirectUri
+     *
+     * @return \CosmonovaRnD\Facades\Accounts\DTO\TokenData|null
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @since 1.4.0
+     */
+    public function authorizationCode(string $appId, string $appSecret, string $code, string $redirectUri): ?TokenData
+    {
+        try {
+            $response = $this->client->request(
+                'post',
+                $this->tokenUrl,
+                [
+                    'auth' => [$appId, $appSecret],
+                    'form_params' => [
+                        'grant_type' => 'authorization_code',
+                        'code' => $code,
+                        'redirect_uri' => $redirectUri
+                    ]
+                ]
+            );
+
+            if (200 === $response->getStatusCode()) {
+                return TokenData::createFromJson($response->getBody()->getContents());
+            }
+        } catch (Throwable $throwable) {
             // DoNothing
         }
 
