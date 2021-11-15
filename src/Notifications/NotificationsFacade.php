@@ -260,14 +260,6 @@ final class NotificationsFacade
     /**
      * Create sms-notification
      *
-     * @param string $accessToken
-     * @param array $receivers
-     * @param string $text
-     * @param string $subject
-     * @param array|null $placeholders
-     * @param \DateTimeImmutable|null $scheduleTime
-     * @param bool $translit
-     *
      * @return NotificationResult
      * @throws NotificationsException
      * @since   1.2.0
@@ -279,7 +271,8 @@ final class NotificationsFacade
         array $placeholders = null,
         \DateTimeImmutable $scheduleTime = null,
         bool $translit,
-        string $accessToken
+        string $accessToken,
+        ?string $sender = null
     ): NotificationResult {
         try {
             $url = $this->baseUrl . '/notifications/sms';
@@ -295,6 +288,7 @@ final class NotificationsFacade
                                 'receivers' => $receivers,
                                 'text' => $text,
                                 'subject' => $subject,
+                                'sender' => $sender,
                                 'placeholders' => $placeholders,
                                 'schedule_time' => isset($scheduleTime) ? $scheduleTime->format('Y-m-d H:i:s') : null,
                                 'translit' => $translit
