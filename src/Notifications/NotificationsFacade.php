@@ -272,7 +272,7 @@ final class NotificationsFacade
         \DateTimeImmutable $scheduleTime = null,
         bool $translit,
         string $accessToken,
-        ?string $sender = null
+        ?string $country = null
     ): NotificationResult {
         try {
             $url = $this->baseUrl . '/notifications/sms';
@@ -288,7 +288,7 @@ final class NotificationsFacade
                                 'receivers' => $receivers,
                                 'text' => $text,
                                 'subject' => $subject,
-                                'sender' => $sender,
+                                'country' => $country,
                                 'placeholders' => $placeholders,
                                 'schedule_time' => isset($scheduleTime) ? $scheduleTime->format('Y-m-d H:i:s') : null,
                                 'translit' => $translit
